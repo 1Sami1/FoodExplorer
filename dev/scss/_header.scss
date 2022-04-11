@@ -5,18 +5,28 @@
     justify-content: space-between;
 }
 
-nav picture {
+#button {
     height: 35px;
+    width: 35px;
 }
 
 nav ul {
     padding-left: 0;
 }
-
+@media (min-width: 500px){
+ .logo img {
+    width: 70%;
+ }
+ }
 nav li {
     background-color: varis.$dark-blue;
     color: white;
     list-style: none;
 }
 
+// @media (min-width: 330px) {
+//     .logo {
+//        height: 35px;
+//     }
+// }
 
