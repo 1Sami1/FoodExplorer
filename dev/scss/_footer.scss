@@ -1,0 +1,8 @@
+@use "variables" as varis;
+
+footer {
+    width: 100%;
+    color: white;
+    background-color: varis.$light-blue;
+    text-align: center;
+}
