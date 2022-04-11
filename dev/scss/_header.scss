@@ -1,0 +1,13 @@
+@use "variables" as varis;
+
+nav ul {
+    padding-left: 0;
+}
+
+nav li {
+    background-color: varis.$dark-blue;
+    color: white;
+    list-style: none;
+}
+
+
