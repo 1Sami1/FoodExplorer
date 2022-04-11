@@ -1,0 +1,26 @@
+.grid-section{
+    img{
+        width: 100%;
+    }
+    h3{
+        background-color: rgba(0, 0, 0, 0.708);
+        color: white;
+        position: relative;
+        bottom: 3.7rem;
+        height: 2rem;
+        padding-left: 10px;
+        padding-top: 5px;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@media (min-width: 670px) {
+    .grid-section{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr;
+        img{
+            height: 400px;
+        }
+    }
+}
