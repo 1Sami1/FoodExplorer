@@ -1,5 +1,14 @@
 @use "variables" as varis;
 
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav picture {
+    height: 35px;
+}
+
 nav ul {
     padding-left: 0;
 }
