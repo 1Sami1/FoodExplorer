@@ -1,26 +1,57 @@
 .grid-section{
-    img{
-        width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: .5rem;
+    #image{
+        position: relative;
+        margin: 0;
+        padding: 0;
+        
+        img{
+            display: block;
+            width: 100%;
+            height: 300px;
+            
     }
     h3{
         background-color: rgba(0, 0, 0, 0.708);
         color: white;
-        position: relative;
-        bottom: 3.7rem;
-        height: 2rem;
+        position: absolute;
+        width: 345px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         padding-left: 10px;
-        padding-top: 5px;
+        font-weight: 700;
+        left: 0;
+        top: 14.9rem;
+        
+        
+
         font-family: 'Roboto', sans-serif;
+        
     }
+    }
+    
+
 }
 
 @media (min-width: 670px) {
     .grid-section{
         display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
         img{
             height: 400px;
         }
+    }
+}
+
+@media (min-width: 1000px ) {
+    .grid-section, article{
+        width: 900px;
+        margin: 0 auto;
+    }
+    aside{
+        float: right;
     }
 }
