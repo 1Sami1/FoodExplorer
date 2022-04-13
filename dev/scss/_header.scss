@@ -3,6 +3,9 @@
 .nav-bar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 0;
 }
 
 #button {
@@ -13,20 +16,51 @@
 nav ul {
     padding-left: 0;
 }
+
+.nav-menu {
+    margin: 0;
+}
+
+@media (min-width: 330px){
+    .logo img {
+        width: 75%;
+    }
+}
+
+
+
+
 @media (min-width: 500px){
  .logo img {
     width: 70%;
  }
+ #button {
+     display: none;
  }
-nav li {
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
     background-color: varis.$dark-blue;
-    color: white;
-    list-style: none;
 }
 
-// @media (min-width: 330px) {
-//     .logo {
-//        height: 35px;
-//     }
-// }
+.nav-menu li {
+    padding: .5rem 2rem;
+
+}
+ }
+
+
+
+
+nav li {
+    background-color: varis.$light-blue;
+    color: white;
+    list-style: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
 
