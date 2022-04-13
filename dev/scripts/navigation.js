@@ -7,7 +7,7 @@ window.onresize = myFunction2;
 
 
 function myFunction() {
-	var x = document.getElementById("header-menu");
+	var x = document.getElementById("mobile-header-menu");
     if(window.innerWidth < 500){
 	if (x.style.display === "none") {
 	  x.style.display = "block";

@@ -6,6 +6,10 @@
     margin: 0 auto;
 }
 
+.desktop-site-navigation {
+    display: none;
+}
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -17,13 +21,18 @@
 .logo {
     height: 35px;
 }
+
 #button {
     height: 30px;
     width: 35px;
 }
 
-.icons {
-    display: none;
+i {
+    color: varis.$light-blue;
+}
+
+i:hover {
+    color: darkgray;
 }
 
 nav ul {
@@ -46,6 +55,17 @@ nav ul {
 
 
 @media (min-width: 500px){
+ .mobile-site-navigation{
+     display: none;
+ }
+
+ .desktop-site-navigation{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+ }
+
+
  .logo img {
     width: 70%;
  }
@@ -71,10 +91,7 @@ nav ul {
         padding: 0 .5rem;
     }
 }
-
  }
-
-
 
 
 nav li {

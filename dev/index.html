@@ -21,7 +21,8 @@
 <div class="page-wrapper">
 <header class="site-header">
 	<!-- social media icons -->
-	<nav class="site-navigation" id="site-navigation">
+	<nav>
+		<div class="mobile-site-navigation" id="mobile-site-navigation">
 		
 		<div class="nav-bar">
 		<picture class="logo">
@@ -29,26 +30,46 @@
 			<img src="images/small-logo.jpg"/>
 		</picture>
 		
-		<div class="icons">
-			<i class="fa-brands fa-facebook-f"></i>
-			<i class="fa-brands fa-google"></i>
-			<i class="fa-brands fa-twitter"></i>
-		</div>
-
 		<img id="button" src="images/menu.png" alt="">
 
 		</div>
 		
-		<ul class="nav-menu" id="header-menu">
+		<ul class="nav-menu" id="mobile-header-menu">
 			<li>Home</li>
 			<li>About</li>
 			<li>Reviews</li>
 			<li>Recipes</li>
 			<li>Contact</li>
+			<div class="icons">
+				<i class="fa-brands fa-facebook-f"></i>
+				<i class="fa-brands fa-facebook-f"></i>
+				<i class="fa-brands fa-google"></i>
+				<i class="fa-brands fa-twitter"></i>
+			</div>
 		</ul>
+		</div>
+<!-- desktop menu -->
+		<div class="desktop-site-navigation" id="desktop-site-navigation">
+			<picture class="logo">
+				<source media="(min-width: 330px)" srcset="images/logo.png">
+				<img src="images/logo.jpg"/>
+			</picture>
+			<input type="text" placeholder="Search..">
+			<ul class="nav-menu" id="mobile-header-menu">
+				<li>Home</li>
+				<li>About</li>
+				<li>Reviews</li>
+				<li>Recipes</li>
+				<li>Contact</li>
+
+			</ul>
+
+
+		</div>
 
 	</nav>
-	<!-- Search bar -->
+
+
 	</header>
 
 <main>
