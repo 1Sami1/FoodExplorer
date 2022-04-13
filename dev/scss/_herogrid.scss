@@ -1,6 +1,6 @@
 .grid-section{
     img{
-        width: 100%;
+        max-width: 100%;
     }
     h3{
         background-color: rgba(0, 0, 0, 0.708);
@@ -12,13 +12,14 @@
         padding-top: 5px;
         font-family: 'Roboto', sans-serif;
     }
+
 }
 
 @media (min-width: 670px) {
     .grid-section{
         display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        
         img{
             height: 400px;
         }
