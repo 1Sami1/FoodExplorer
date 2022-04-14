@@ -2,7 +2,7 @@
 
 
 .page-wrapper {
-    max-width: 1000px;
+    // max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    // align-items: center;
+    align-items: center;
     height: 40px;
     margin-bottom: 0;
 }
@@ -28,7 +28,7 @@
 }
 
 .logo {
-    height: 35px;
+    height: 100%;
 }
 
 #button {
@@ -64,9 +64,7 @@ input {
     background-repeat: no-repeat;
     box-sizing: border-box;
     background-color: #dcdcdc;
-
 }
-
 
 .icons {
     display: flex;
@@ -116,15 +114,13 @@ input {
       color: gray;
   }
 
-
 @media (min-width: 330px){
     .logo img {
         width: 75%;
     }
 }
 
-
-
+///500px width
 
 @media (min-width: 500px){
  .mobile-site-navigation{
@@ -132,17 +128,26 @@ input {
  }
 
  .desktop-site-navigation{
+     max-width: 1000px;
+     margin: 0 auto;
      display: flex;
      flex-wrap: wrap;
      justify-content: space-between;
  }
 
-
  .logo img {
     width: 70%;
  }
+
  #button {
      display: none;
+ }
+
+ input {
+     width: 30%;
+     height: 55%;
+     border-radius: 5px;
+     border: 1px solid varis.$light-blue;
  }
 
 .nav-menu {
