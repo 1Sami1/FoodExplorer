@@ -1,4 +1,4 @@
-var button = document.getElementById("button");
+let button = document.getElementById("button");
 
 button.addEventListener("click",myFunction);
 
@@ -7,7 +7,7 @@ window.onresize = myFunction2;
 
 
 function myFunction() {
-	var x = document.getElementById("mobile-header-menu");
+	let x = document.getElementById("mobile-header-menu");
     if(window.innerWidth < 500){
 	if (x.style.display === "none") {
 	  x.style.display = "block";
@@ -21,11 +21,11 @@ function myFunction() {
   }
 
   function myFunction2() {
-      var x = document.getElementById("header-menu");
+      let y = document.getElementById("desktop-site-navigation");
       if(window.innerWidth >499) {
-          x.style.display = "flex";
+          y.style.display = "flex";
         
       } else {
-          x.style.display = "none";
+          y.style.display = "none";
       }
   }
