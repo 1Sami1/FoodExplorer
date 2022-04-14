@@ -1,54 +1,58 @@
 @use "variables" as varis;
 
-
-article{
-    position: relative;
+.articles{
     background-color: white;
-    padding-right: 1rem;
-    
+    padding: 10px;
+    margin: 10px auto 10px auto;
+    position: relative;
+    height: 350px;
+
     h2{
-        padding: 1rem;
-        color: varis.$light-blue;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-weight: 400;
+        background-color: transparent;
+        color: $dark-blue;
         font-size: 1.7rem;
-    }
-    .credit{
-        position: absolute;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        top: 4.2rem;
-        font-size: .7rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        color: black;
-    }
-    img{
-        box-sizing: border-box;
-        padding-left: 1rem;
+        padding: 0;
+        margin: 0;
+        position: relative; 
     }
     p{
-        padding-left: 1rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
+        margin-bottom: 1rem;
     }
-
+    img{
+        margin-bottom: .5rem;
+        width: 100%;
+    }
     button{
-        .btn-p{
-            color: white;
+        p{
             padding: 0;
-            font-weight: 700;
-            font-family: 'Roboto Condensed', sans-serif;
             margin: 0;
         }
-        padding: 5px 5px;
         background-color: $dark-blue;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: white;
+        font-weight: 700;
+        padding: 5px 5px;
         border: none;
         text-align: center;
         font-size: 1rem;
-        
-        
+        margin: 0 10px 10px 10px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+
     }
-    
 }
 
+@media (min-width: 615px) {
+    .articles{
+        height: 400px;
+    }
+
+}
+@media (min-width: 712px) {
+    .articles{
+        height: 420px;
+    }
+
+}
