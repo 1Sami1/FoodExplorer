@@ -1,9 +1,53 @@
 .side-bar{
+    h3{
+        background-color: $dark-blue;
+        color: white;
+        padding: 10px;
+        margin-bottom: 1px;
+    }
     .recipes{
     padding: 0;
     margin: 0;
     background-color: white;
+    list-style: none;
+    li{
+       font-size: 1.25rem;
+       height: 68px;
+       padding: 10px;
+       margin: 0;
+       display: grid;
+       grid-template-columns: 65px 1fr;
+       column-gap: 10px;
+       align-items: center;
+    }
+    li:nth-child(2n){
+        background-color: lightgrey;
+    }
+    img{
+        margin-right: 1rem;
+        border: $dark-blue solid 2px;
+    }
   }
+  .cuisines{
+      list-style: none;
+      background-color: white;
+      columns: 2;
+      padding: 10px 0 10px 0 10px;
+      list-style-position: inside;
+  }
+}
+
+@media (min-width: 640px){
+    .cuisines{
+        columns: 3;
+        list-style-position: inside;
+    }
+}
+@media (min-width: 770px){
+    .cuisines{
+        columns: 1;
+        list-style-position: inside;
+    }
 }
 
 
