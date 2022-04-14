@@ -1,10 +1,12 @@
 @use "variables" as varis;
 
 
-article{
+.articles{
     position: relative;
     background-color: white;
     padding-right: 1rem;
+    height: 350px;
+    
     
     h2{
         padding: 1rem;
@@ -46,9 +48,12 @@ article{
         border: none;
         text-align: center;
         font-size: 1rem;
-        
-        
+        position: relative;
+        left: 15.5rem;
     }
-    
+}
+.older-btn{
+    margin-top: 3rem;
+    padding: 0;
 }
 
