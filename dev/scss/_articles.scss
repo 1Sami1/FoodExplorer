@@ -57,3 +57,24 @@
     padding: 0;
 }
 
+@media (min-width: 670px) {
+    .articles{
+        height: 420px;
+        button{
+            left: 633px;
+        }
+        .credit{
+            top: 2.4rem;
+        }
+    }
+}
+@media (min-width: 1000px) {
+    .articles{
+        height: 460px;
+        button{
+            left: 799px;
+            top: 1rem;
+        }
+    }
+    
+}
