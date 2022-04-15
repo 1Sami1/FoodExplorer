@@ -22,10 +22,6 @@
         bottom: 0;
         width: 100%;
         box-sizing: border-box;
-        
-        
-        
-
     }
     }
     
@@ -47,11 +43,9 @@
 }
 
 @media (min-width: 1000px ) {
-    .grid-section, article{
+    .grid-section, article, .side-bar{
         width: 900px;
         margin: 0 auto;
     }
-    aside{
-        float: right;
-    }
+
 }

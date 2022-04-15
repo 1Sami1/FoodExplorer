@@ -1,8 +1,8 @@
 @use "variables" as varis;
 
 .articles{
-    background-color: white;
     padding: 10px;
+    background-color: white;
     margin: 10px auto 10px auto;
     position: relative;
     height: 350px;
@@ -53,6 +53,13 @@
 @media (min-width: 712px) {
     .articles{
         height: 420px;
+    }
+
+}
+@media (min-width: 840px) {
+    .articles{
+        height: 460px;
+        grid-column: 1 / 2;
     }
 
 }

@@ -1,3 +1,5 @@
+
+
 .side-bar{
     h3{
         background-color: $dark-blue;
@@ -28,25 +30,37 @@
         border: $dark-blue solid 2px;
     }
   }
-  .cuisines{
-      list-style: none;
-      background-color: white;
-      columns: 2;
-      padding: 10px 0 10px 0 10px;
-      list-style-position: inside;
+    .CuisinesH3{
+        
+    }
+    .cuisines{
+        list-style: none;
+        background-color: rgb(255, 255, 255);
+        columns: 2;
+        padding: 10px 0 10px 0 10px;
+        margin-top: 0;
+        padding: 10px;
+        li{
+            padding: 5px;
+        }
+
   }
 }
 
 @media (min-width: 640px){
-    .cuisines{
+    .side-bar{
+        .cuisines{
         columns: 3;
-        list-style-position: inside;
     }
+    }
+    
 }
 @media (min-width: 770px){
-    .cuisines{
+    .side-bar{
+        .cuisines{
         columns: 1;
-        list-style-position: inside;
+        
+    }
     }
 }
 
