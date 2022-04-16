@@ -1,11 +1,11 @@
 // Initialize modules
-​
+
 // Import gulp specific API functions which allows us to write them 
 // below as [gulp-function-name] instead gulp.[function-name],
 // for example:
 // src() instead of gulp.src()
 const { src, dest, watch, series, parallel } = require('gulp');
-​
+
 // Import Gulp plugins and npm packages that we need for this project
 const sourcemaps   = require('gulp-sourcemaps');
 const sass         = require('gulp-dart-sass');
@@ -18,25 +18,25 @@ const imageMin     = require('gulp-imagemin');
 const cache        = require('gulp-cache');
 const htmlMin      = require('gulp-htmlmin');
 //const cssnano = require('cssnano');
-​
+
 // Dev / Build State
 // These variables are used to set the 
 // dev or build state of the Gulpfile 
 let devMode   = true;
 let buildMode = false;
-​
+
 // Use jQuery
 // This variable is used to determine if the
 // jQuery library is being used or not.
 // Set to false if you do not need the jQuery library in your project
 const useJQuery = true;
-​
+
 // File Names
 const filenames         = {};
 filenames.jQuery        = 'jquery-3.6.0.min.js';
 filenames.jsNoExtension = 'script.min';
 filenames.js            = `${filenames.jsNoExtension}.js`;
-​
+
 // Folder Paths
 const folders      = {};
 // Main Folders
@@ -73,7 +73,7 @@ folders.fontsDev      = `${folders.dev}/${folders.fonts}`;
 folders.fontsDist     = `${folders.dist}/${folders.fonts}`;
 folders.webfontsDev   = `${folders.dev}/${folders.webfonts}`;
 folders.webfontsDist  = `${folders.dist}/${folders.webfonts}`;
-​
+
 // File Paths
 const files    = {};
 // HTML Files 
@@ -95,9 +95,9 @@ files.media    = `${folders.mediaDev}/**/*`;
 // Fonts Files
 files.fonts    = `${folders.fontsDev}/**/*`;
 files.webfonts = `${folders.webfontsDev}/**/*`;
-​
+
 // Development Tasks
-​
+
 // Sass Task: 
 // 1. Compiles the Sass files into the dev styles folder
 function sassTask(){    
@@ -108,7 +108,7 @@ function sassTask(){
         .pipe(dest(folders.stylesDev)) // Puts CSS files in dev styles folder (dev mode)
         .pipe(browserSync.stream()) // Injects new CSS to the browser (dev mode)
 }
-​
+
 // Sass Build Task: 
 // 1. Compiles the Sass files into the dist styles folder
 function sassBuildTask(){
@@ -116,7 +116,7 @@ function sassBuildTask(){
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(dest(folders.stylesDist));
 }
-​
+
 // JS Task: 
 // 1. Concatenates JS files into the dev scripts folder
 function jsTask(){
@@ -126,7 +126,7 @@ function jsTask(){
         .pipe(sourcemaps.write('.')) // Writes sourcemaps (dev mode)
         .pipe(dest(folders.jsDev)) // Puts concatenated JS file in dev scripts folder (dev mode)
 }
-​
+
 // JS Build Task: 
 // 1. Concatenates JS files into the dist scripts folder
 function jsBuildTask(){
@@ -135,7 +135,7 @@ function jsBuildTask(){
         .pipe(uglify())
         .pipe(dest(folders.jsDist))
 }
-​
+
 // jQuery Task:
 // 1. If useJQuery is set to true, copies jQuery to the dist scripts folder
 function jQueryTask(done){
@@ -145,7 +145,7 @@ function jQueryTask(done){
     }
     done(); 
 }
-​
+
 // HTML Task:
 // 1. Compresses the HTML files
 // 2. Copies the compressed HTML files to the dist folder 
@@ -154,7 +154,7 @@ function htmlTask(){
         .pipe(htmlMin({collapseWhitespace: true})) // Compresses the HTML files
         .pipe(dest(folders.dist)); // Copies compressed HTML files to the dist folder
 }
-​
+
 // Images Task:
 // 1. Compresses the image files
 // 2. Copies the compressed image files to the dist images folder
@@ -163,7 +163,7 @@ function imagesTask(){
         .pipe(cache(imageMin({interlaced: true}))) // Compresses images
         .pipe(dest(folders.imagesDist)); // Copies compressed images to the dist images folder
 }
-​
+
 // Media Task
 // 1. Copies the media files (mainly videos) to the dist media folder
 function mediaTask(done){
@@ -171,7 +171,7 @@ function mediaTask(done){
         .pipe(dest(folders.mediaDist)); // Copies the font files to the dist fonts folder
     done();
 }
-​
+
 // Fonts Task:
 // 1. Copies the font files to the dist fonts folder
 function fontsTask(done){
@@ -181,17 +181,17 @@ function fontsTask(done){
         .pipe(dest(folders.webfontsDist)); // Copies the Font Awesome icon font files to the dist webfonts folder 
     done();
 }
-​
+
 // Cachebust Task:
 // 1. Create a time stamp based on the current time
 // 2. Replaces any query strings in the HTML files that uses the time stamp with the new timp stamp
 function cacheBustTask(done){
     const cbString = new Date().getTime(); // Create time stamp based on current time
     return src(files.htmlDist)
-        .pipe(replace(/[.css?]cachebuster=\d+/g, '?cachebuster=' + cbString)) // Replace current time stamp CSS query string in the HTML files with the new time stamp
+        .pipe(replace(/[.css|.min.js][?]cachebuster=\d+/g, '.css?cachebuster=' + cbString)) // Replace current time stamp CSS query string in the HTML files with the new time stamp
         .pipe(dest(folders.dist)); // Put the modified HTML files in the dist folder
 }
-​
+
 function watchTask(){
     // Setup Browsersync for automatic reloading and re-freshing of CSS, Javascript and HTML
     browserSync.init({
@@ -203,9 +203,9 @@ function watchTask(){
     watch(files.js).on('change', series(jsTask, browserSync.reload)); // Watches the dev JavaScript directory (JS files only)
     watch(files.html).on('change', browserSync.reload); // Watches the dev folder (HTML files only)    
   }
-​
+
 // Build Tasks
-​
+
 // Set Build State Task:
 // 1. Sets devMode to false
 // 2. Sets buildMode to true
@@ -221,9 +221,11 @@ function cleanTask(done){
     del.sync(folders.dist);
     done();
 }
-​
+
 // Default Task:
 exports.default = series(parallel(sassTask, jsTask), watchTask);
-​
+
 // Build Task:     
-exports.build = series(setBuildState, cleanTask, parallel(sassBuildTask, jsBuildTask, jQueryTask), parallel(imagesTask, mediaTask, fontsTask), htmlTask, cacheBustTask);
+exports.build = series(setBuildState, cleanTask, parallel(sassBuildTask, jsBuildTask, jQueryTask), parallel(imagesTask, mediaTask, fontsTask), htmlTask);
+
+
