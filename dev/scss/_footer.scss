@@ -3,9 +3,13 @@
 footer {
     width: 100%;
     color: white;
-    background-color: varis.$light-blue;
+    background-color: varis.$dark-blue;
     text-align: center;
     font-family: 'Roboto Light', sans-serif;
-    padding: 5px;
+    padding: .5rem 0;
     margin: 0 auto;
+
+    p {
+        padding: 0 1rem;
+    }
 }

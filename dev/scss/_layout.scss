@@ -1,0 +1,26 @@
+.page-wrapper {
+    // max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 780px) {
+    #main-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        max-width: 1000px;
+        width: 98%;
+        margin: 0 auto;
+        column-gap: 10px;
+         
+    }
+
+    .side-bar {
+        grid-area: 1/2 / 3/3;
+
+        h3{
+            margin-top: 0;
+        }
+    }
+
+}
